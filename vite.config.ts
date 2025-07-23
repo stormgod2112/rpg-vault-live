@@ -6,14 +6,18 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client", "src"),
-      "@shared": path.resolve(__dirname, "shared"),
+      "@": path.resolve(process.cwd(), "client", "src"),
+      "@shared": path.resolve(process.cwd(), "shared"),
     },
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
-  root: path.resolve(__dirname, "client"),
+  root: path.resolve(process.cwd(), "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: path.resolve(process.cwd(), "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      input: path.resolve(process.cwd(), "client/index.html"),
+    },
   },
   server: {
     fs: {
