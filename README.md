@@ -1,25 +1,18 @@
-# RPG Vault - Clean Deployment Package
+# RPG Vault - Railway Ready Deployment
 
-This is a clean export of the RPG Vault application, free from Git metadata caching issues.
+## Quick Deploy to Railway
 
-## Quick Deploy
+1. **Upload these files to your GitHub repository** (replace all existing files)
+2. **In Railway, redeploy your service**
+3. **Environment Variables** (should already be set):
+   - DATABASE_URL: Your PostgreSQL connection string
+   - SESSION_SECRET: rpg_vault_session_secret_2025
 
-### Environment Variables Required:
-- DATABASE_URL: postgresql://neondb_owner:npg_NACy8RuKH7lV@ep-hidden-base-adhsetg8.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require
-- SESSION_SECRET: rpg_vault_session_secret_2025
+## Build Details
+- Fixed Vite configuration for Railway compatibility
+- Removed Replit-specific dependencies
+- 635KB optimized production bundle
+- All features intact: authentication, forums, 166 RPG adventures
 
-### Railway Deployment:
-1. Create new GitHub repository
-2. Upload these files to the new repository
-3. Deploy from Railway using the new repository
-
-### Vercel Deployment:
-1. Upload this folder directly to Vercel
-2. Or create new GitHub repository and deploy from there
-
-### Manual Deployment:
-1. Run: npm install
-2. Run: npm run build
-3. Run: npm start
-
-The application builds to a 635KB bundle and runs perfectly.
+## Live URL
+After successful deployment: rpg-vault-live-production.up.railway.app
